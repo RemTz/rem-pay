@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+    <title>lemPay</title>
+    <meta charset="utf-8">
+    <script src="store.js" async></script>
+    
+    <style>
+    *{
+    background-color: #ffffff;
+    box-sizing: border-box;
+    }
+    .body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .column{
+        float: left;
+        width: 40%;
+        padding: 0 15px;
+        margin-top: 50px;
+        margin-left: 90px;
+    }
+    .row{
+        margin: 0 -5px;
+    }
+    .row:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .card{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: "";
+        background-color: #ffffff;
+        border: 1px solid rgb(231, 231, 231);
+        border-radius: 10px 10px 0 0;
+    }
+    .card1{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: "";
+        background-color: #ffffff;
+        border: 1px solid rgb(231, 231, 231);
+        border-radius: 10px;
+    }
+    @media screen and (max-width: 600px){
+        .column{
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+    .block{
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: rgb(4, 5, 82);
+        padding: 14px 28px;
+        text-emphasis-color: white;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .block1{
+        display: block;
+        width: 100%;
+        height: 46px;
+        border: none;
+        background-color: rgb(67, 158, 219);
+        padding: 14px 28px;
+        text-emphasis-color: white;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 30px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    header{
+        display: block;
+    }
+    .header{
+        width: 100%;
+        height: 70px;
+        border: 1px solid rgb(228, 228, 228);
+        padding: 0px;
+        margin-top: 05px;
+        border-radius: 10px;
+        background-color: white;
+    }
+    .nav-footer{
+        margin-top: 60px;
+    }
+    hr{
+        border: 1px solid rgb(226, 226, 226);
+    }
+    h4{
+        color: rgb(92, 92, 92);
+        font-family: Times New Roman, Times, serif;
+    }
+    h5{
+        margin-left: 1200px;
+        color:rgb(250, 42, 170);
+        margin-top: -30px;
+        font-size: 15px;
+    }
+    h6{
+        margin-left: 100px;
+        color: blue;
+        font-size: 15px;
+    }
+    .regin{
+        width: 400px;
+        height: 40px;
+        border: 1px solid black;
+        padding: 0px;
+        margin: 0px;
+        border-radius: 2px;
+    }
+    input[type=text]{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid black;
+    }
+    .online{
+        width: 49%;
+        height: 80px;
+        border: 1px solid rgb(209, 209, 209);
+        padding: 0px;
+        margin-top: 05px;
+        border-radius: 10px;
+        background-color: white;
+    }
+    </style>
+    
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <h4></h4>
+
+    <header>
+        <div class="header">
+            <img src="logo.png" alt="buy cozhere" style="height:45px; border-radius:10px; margin-left:13px; margin-top:10px;">
+        </div>
+    </header>
+
+    <div class="row">
+    <div class="column">
+        <div class="card1">
+            <h4>Billing Address(Cities)</h4>
+
+               <label for="cars" style="font-size: 13px; color: rgb(17, 17, 17); font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Select Your Current City:
+                <select id="city" name="city" onchange="populate(this.id,'city1')" style="width: 100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box; border-radius: 04px; border: 1px solid rgb(0, 0, 0); font-size: 15px;">
+                <option value="" style="text-align: center;"> -- choose current city --</option>
+                <option value="dsm">Arusha</option>
+                <option value="atown">Dar-es-Salaam</option>
+                <option value="rock">Mwanza</option>
+                <option value="green">Mbeya</option>
+                <option value="lovely">Tanga</option>
+                </select>
+               </label><br>
+
+            <h4>Pay With</h4>
+            <label>
+                <input type="radio" text="TigoPesa" name="TigoPesa" id="tigopesa">TigoPesa<img src="images/tig.png" alt="buy cozhere" style="margin-left: 200px; height: 30px; width: 64px; border-radius: 4px;">
+            </label><br><br>
+            <label>
+                <input type="radio" text="TigoPesa" name="TigoPesa" id="mpesa">M-Pesa*<img src="images/vod.png" alt="buy cozhere" style="margin-left: 202px; height: 30px; width: 64px; border-radius: 4px;">
+            </label><br><br>
+            <label>
+                <input type="radio" text="TigoPesa" name="TigoPesa" id="tpesa">T-Pesa*<img src="images/tpesa.jpg" alt="buy cozhere" style="margin-left: 207px; height: 30px; width: 64px; border-radius: 4px;">
+            </label><br><br>
+            <hr>
+            <h4>Pay Online By</h4>
+            <div id="paypal-button-container"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.paypal.com/sdk/js?client-id=AXxCWYrQ3-y6SeHCE6cRG6XvvFPCUlRcCIXHJ2DIoZ9nkYfeP6wbFOOzO97wlwm-4l5_cDiVVZE_pUri"></script>
+
+    <script type="text/javascript">
+        paypal.Buttons({
+            createOrder: function(data, actions){
+              return actions.order.create({
+                  purchase_units:[{
+                      amount:{
+                          value:'100'
+                      }
+                  }]
+              });
+            },
+
+            onApprove:function(data, actions){
+                return actions.order.capture().then(function(details){
+                    console.log(details)
+
+                    alert("Completed your payment!");
+                })
+            },
+
+            onCancel:function(data){
+                alert("Payment cancelled!");
+            },
+
+            onError: function(err){
+                alert("Oops something went wrong!")
+            }
+
+        }).render("#paypal-button-container"); 
+
+        function myFunction(){
+            let userInput = document.querySelector("#userInput");
+            let message = document.querySelector("#message");
+
+            message.innerHTML = "welcome " + userInput.value;
+        }
+
+        function validate(){
+            var radio1 = document.getElementById('tigopesa') .checked;
+            var radio2 = document.getElementById('mpesa') .checked;
+            var radio3 = document.getElementById('tpesa') .checked;
+            if((radio1=="")&&(radio2=="")&&(radio3=="")){
+                alert("select a payway plz!");
+            }
+            else{
+                alert("umechagua pow!");
+            }
+        }
+
+        const card1 = document.querySelector('.card1'),
+              form = card1.querySelectorAll('.form'),
+              button = card[0].querySelector('button[type="button"]');
+
+        function getDataForm(e){
+            e.preventDefault();
+
+            var formData = new FormData(card[0]);
+            alert(formData.get('cityField'));
+
+        }
+
+        document.addEventListener('DoMContentLoaded', function(){
+            button.addEventListener('click', getDataForm, false);
+        }, false);
+
+    </script>
+
+    <div class="column">
+
+        <div class="card">
+            <h4>Order Summary</h4>
+            <p1>Original Price:</p1><br>
+            <p1>Price Discounts:</p1><br><hr>
+            <p1>Total:</p1><br><br>
+            <p2 style="color: rgb(100, 100, 100);">TWB-Hub is collecting their courses cost via TigoPesa only.</p2><br>
+            <p2 style="color: rgb(100, 100, 100);">By completing your purchase you agree to these terms of services.</p2><br><br>
+        </div>
+            
+        <button type="button" class="block" onclick="return validate()" onsubmit="getDataForm">Pay Now</button>
+     
+    </div>
+    </div>
+    </div>
+
+    <footer class="nav-footer">
+        <h4 style="font-size: 16px; margin-left: 117px; ">Order Details</h4>
+        <hr>
+        <div class="detail">
+            <img src="images/son.png" alt="buy cozhere" style="margin-left: 100px; height: 40px; width: 500px;">
+        </div><br>
+        <div class="detail">
+            <img src="images/son.png" alt="buy cozhere" style="margin-left: 100px; height: 40px; width: 500px;">
+        </div><br>
+        <div class="detail">
+            <img src="images/son.png" alt="buy cozhere" style="margin-left: 100px; height: 40px; width: 500px;">
+        </div><br>
+        <div class="detail">
+            <img src="images/son.png" alt="buy cozhere" style="margin-left: 100px; height: 40px; width: 500px;">
+        </div><br><hr style="border: 1px solid rgb(156, 156, 156);">
+        <label style="font-size: 12px; margin-left: 620px;">@2022 All rights reserved.</label>
+    </footer>
+
+</body>
+</html>
