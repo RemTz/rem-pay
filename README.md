@@ -1,0 +1,1 @@
+# Rem-Pay is a simple web application aims to simplify the payment through various methods like mobile service providers(m-pesa, tigopesa),mastercard payment and paypal and it is developed using django framework.
